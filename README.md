@@ -83,7 +83,7 @@ Buka file .env dan sesuaikan konfigurasi database Anda:
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=eventhub_db  # Pastikan database ini sudah dibuat di phpMyAdmin
+DB_DATABASE=eventhub_db
 DB_USERNAME=root
 DB_PASSWORD=
 ```
