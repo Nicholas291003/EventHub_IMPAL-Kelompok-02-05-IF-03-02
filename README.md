@@ -78,6 +78,42 @@ File .env tidak disertakan di GitHub demi keamanan, jadi Anda harus membuatnya u
 ```
 cp .env.example .env
 ```
+Buka file .env dan sesuaikan konfigurasi database Anda:
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=eventhub_db  # Pastikan database ini sudah dibuat di phpMyAdmin
+DB_USERNAME=root
+DB_PASSWORD=
+```
+PENTING: Pastikan APP_URL sesuai dengan port server Anda (biasanya 8000).
+```
+APP_URL=[http://127.0.0.1:8000](http://127.0.0.1:8000)
+```
+### 4. Generate Key & Database
+```
+php artisan key:generate
+php artisan migrate
+```
+Jika muncul error "Table sessions not found", jalankan:
+```
+php artisan make:session-table
+php artisan migrate
+```
+### 5. Build Frontend
+Agar tampilan website tidak berantakan :
+```
+npm run build
+```
+### 6. Jalankan Aplikasi
+```
+php artisan serve
+```
+Buka browser dan akses: 
+```
+http://127.0.0.1:8000
+```
 -----
 
 ## 🔐 Akun Demo
