@@ -45,7 +45,7 @@
   * **Laporan Keuangan:** Rekapitulasi pendapatan per event dalam bentuk tabel & modal.
   * **Detail Transaksi:** Melihat siapa saja pembeli tiket untuk setiap event.
 
-### 👤 User (Pengunjung/Peserta)
+### 👤 User
 
   * **Exploration:** Landing page dengan pencarian event & filter.
   * **Booking Flow:** Pembelian tiket dengan validasi stok otomatis.
