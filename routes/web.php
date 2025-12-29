@@ -6,6 +6,7 @@ use App\Http\Controllers\Guest\WelcomeController;
 use App\Http\Controllers\User\ProfileController;
 use App\Http\Controllers\User\TransactionController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 Auth::routes();
 // --- GROUP 1: GUEST (PENGUNJUNG) ---
