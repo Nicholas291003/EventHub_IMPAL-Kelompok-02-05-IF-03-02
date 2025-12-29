@@ -1,7 +1,6 @@
 # 🎫 PROJECT : EVENTHUB
-
-> **Web Manajemen & E-Ticketing Event Terpusat**
-> *Platform modern untuk pengelolaan event, penjualan tiket, dan validasi peserta berbasis QR Code.*
+EventHub adalah aplikasi berbasis web yang dibangun menggunakan **Laravel** untuk mempermudah pengelolaan dan pemesanan tiket event (konser, seminar, workshop). 
+Aplikasi ini memiliki dua peran utama: Pengunjung (User) dan Administrator.
 
 -----
 
@@ -34,95 +33,87 @@
 | **Tools & Libs** |   **QR Code Generator** |
 
 -----
+## 🚀 Fitur Utama
 
-## 🗺️ Peta Fitur (Feature Map)
+### 👤 Pengunjung (User)
+- **Browse Event:** Melihat daftar event terbaru yang tersedia.
+- **Search:** Mencari event berdasarkan nama atau lokasi.
+- **Detail Event:** Melihat deskripsi lengkap, harga, dan sisa tiket.
+- **Registrasi/Login:** Membuat akun untuk memesan tiket.
 
-### 👮 Administrator (Pengelola)
-
-  * **Dashboard Utama:** Grafik statistik *real-time* (Total Event, Tiket Terjual, Pendapatan).
-  * **Manajemen Event (CRUD):** Tambah, Edit, Hapus event & upload banner.
-  * **Manajemen User:** Memantau pengguna terdaftar & mengubah role user.
-  * **Laporan Keuangan:** Rekapitulasi pendapatan per event dalam bentuk tabel & modal.
-  * **Detail Transaksi:** Melihat siapa saja pembeli tiket untuk setiap event.
-
-### 👤 User (Pengunjung/Peserta)
-
-  * **Exploration:** Landing page dengan pencarian event & filter.
-  * **Booking Flow:** Pembelian tiket dengan validasi stok otomatis.
-  * **Tiket Saya:** Halaman khusus menampilkan tiket yang dibeli.
-  * **QR Code Unik:** Setiap *single ticket* memiliki QR Code unik untuk validasi.
-  * **Profil:** Ubah foto profil (avatar), username, dan password.
+### 🛡️ Admin
+- **Dashboard:** Ringkasan data event.
+- **Manajemen Event (CRUD):** Menambah, mengedit, dan menghapus event.
+- **Upload Gambar:** Menambahkan poster event.
+- **Manajemen Stok:** Mengatur harga dan jumlah tiket.
 
 -----
 
-## 🚀 Quick Start
-### ⚙️ Cara Instalasi (Run Local)
+## 🛠️ Teknologi yang Digunakan
 
-Ikuti langkah-langkah berikut untuk menjalankan project ini :
+- **Backend:** Laravel (PHP Framework)
+- **Frontend:** Blade Templates, Bootstrap 5 (via SASS)
+- **Build Tool:** Vite
+- **Database:** MySQL
+- **Bahasa Pemrograman:** PHP 8.2+
 
-**1. Clone Repository**
-Masuk ke folder project:
+-----
+## ⚙️ Cara Instalasi (Installation Guide)
+
+Ikuti langkah-langkah ini agar website berjalan dengan lancar tanpa error tampilan atau database.
+
+### 1. Clone Repository
 ```bash
-cd eventhub
-````
-
-**2. Install Dependencies**
-Install library PHP dan asset Frontend:
-
-```bash
+git clone [https://github.com/username-anda/EventHub.git](https://github.com/username-anda/EventHub.git)
+cd EventHub
+```
+### 2. Install Dependencies
+Install library PHP dan JavaScript yang dibutuhkan.
+```Bash
 composer install
 npm install
 ```
-
-**3. Setup Environment**
-Duplikat file `.env.example` menjadi `.env`:
-
-```bash
+### 3. Konfigurasi Environment (.env)
+File .env tidak disertakan di GitHub demi keamanan, jadi Anda harus membuatnya ulang.
+```
 cp .env.example .env
 ```
-
-Buka file `.env` dan sesuaikan konfigurasi database Anda:
-
-```env
+Buka file .env dan sesuaikan konfigurasi database Anda:
+```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=eventhub
+DB_DATABASE=eventhub_db
 DB_USERNAME=root
 DB_PASSWORD=
 ```
-
-**4. Generate Key & Storage**
-
-```bash
+PENTING: Pastikan APP_URL sesuai dengan port server Anda (biasanya 8000).
+```
+APP_URL=[http://127.0.0.1:8000](http://127.0.0.1:8000)
+```
+### 4. Generate Key & Database
+```
 php artisan key:generate
-php artisan storage:link
+php artisan migrate
 ```
-
-**5. Migrasi Database**
-Pastikan XAMPP/MySQL sudah jalan, lalu jalankan:
-
-```bash
-php artisan migrate --seed
+Jika muncul error "Table sessions not found", jalankan:
 ```
-
-**6. Jalankan Aplikasi**
-Anda butuh dua terminal untuk menjalankan Laravel 11 (karena menggunakan Vite):
-
-*Terminal 1 (Server PHP):*
-
-```bash
+php artisan make:session-table
+php artisan migrate
+```
+### 5. Build Frontend
+Agar tampilan website tidak berantakan :
+```
+npm run build
+```
+### 6. Jalankan Aplikasi
+```
 php artisan serve
 ```
-
-*Terminal 2 (Build Assets):*
-
-```bash
-npm run dev
+Buka browser dan akses: 
 ```
-
-Buka browser dan akses: `http://localhost:8000`
-
+http://127.0.0.1:8000
+```
 -----
 
 ## 🔐 Akun Demo
