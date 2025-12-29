@@ -56,8 +56,5 @@ Route::group(['prefix' => 'user', 'as' => 'user.', 'middleware' => ['auth'], 'na
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
 
-    // Route Profil User
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
 });
 

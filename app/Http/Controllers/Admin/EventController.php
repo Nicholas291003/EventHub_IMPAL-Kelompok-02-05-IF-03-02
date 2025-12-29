@@ -83,7 +83,7 @@ class EventController extends Controller
 
         Event::create($input);
 
-        return redirect()->route('events.index')
+        return redirect()->route('admin.dashboard')
             ->with('success','Event berhasil ditambahkan.');
     }
 
@@ -131,7 +131,7 @@ class EventController extends Controller
 
         $event->update($input);
 
-        return redirect()->route('events.index')
+        return redirect()->route('admin.dashboard')
             ->with('success','Event berhasil diperbarui.');
     }
 
@@ -148,7 +148,7 @@ class EventController extends Controller
         // Hapus data dari database
         $event->delete();
 
-        return redirect()->route('events.index')
+        return redirect()->route('admin.dashboard')
             ->with('success','Event berhasil dihapus.');
     }
 }

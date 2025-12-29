@@ -67,6 +67,6 @@ class TransactionController extends Controller
             $event->update(['statusTiket' => 'Habis']);
         }
 
-        return redirect()->route('transactions.index')->with('success', 'Pembelian berhasil!');
+        return redirect()->route('user.tickets.index')->with('success', 'Pembelian berhasil!');
     }
 }
