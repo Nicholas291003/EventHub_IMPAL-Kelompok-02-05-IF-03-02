@@ -16,14 +16,14 @@ return new class extends Migration
             // Terhubung ke Transaksi Induk
             $table->foreignId('transaction_id')->constrained('transactions')->onDelete('cascade');
 
-            // Terhubung ke User & Event (biar gampang query)
-            $table->foreignId('user_id')->constrained('users', 'idUser');
-            $table->foreignId('event_id')->constrained('events');
+            // Terhubung ke User & Event 
+            $table->foreignId('user_id')->constrained('users', 'idUser')->onDelete('cascade');
+            $table->foreignId('event_id')->constrained('events')->onDelete('cascade');
 
-            // Kode Unik per Tiket (Ini yang jadi QR Code nanti)
+            // Kode Unik per Tiket 
             $table->string('ticket_code')->unique();
 
-            // Status tiket (misal nanti dipakai Check-in)
+            // Status tiket 
             $table->enum('status', ['Valid', 'Used'])->default('Valid');
 
             $table->timestamps();
